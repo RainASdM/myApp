@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "express": "^4.17.1",
+    "typescript": "^3.7.4"
+  },
+  "srtipt": {
+    "tsc": "tsc"
+  },
+  "devDependencies": {
+    "@types/node": "^13.9.3"
+  }
+}
