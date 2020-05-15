@@ -1,10 +1,41 @@
 const express = require("express");
+const cors = require("cors");
 
 const app = express();
 
-app.get("/hallow world",(req: any, res: { send: (arg0: string) => void; }) => {
-    res.send("hallow world!");
+app.use(cors());
+
+//设置允许跨域访问该服务.
+app.use('*',(req: any, res: any, next: any) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    //Access-Control-Allow-Headers ,可根据浏览器的F12查看,把对应的粘贴在这里就行
+    res.header('Access-Control-Allow-Headers', 'Content-Type');
+    res.header('Access-Control-Allow-Methods', '*');
+    res.header('Content-Type', 'application/json;charset=utf-8');
+    next();
 });
+
+
+app.get("/",(req: any, res: { send: (arg0: string) => void; }) => {
+    res.send("index");
+    console.log("index");
+});
+
+app.get("/asd",(req: any, res: { send: (arg0: string) => void; }) => {
+    res.send("hallow world!");
+    console.log("asd");
+});
+
+app.get("/isLogin",(req: object, res: {send: (result: boolean) => void}) => {
+    res.send(true)
+})
+
+app.post("/login",(req: any, res: {send: () => void;}) => {
+    // if (req)
+
+
+    res.send()
+})
 
 app.listen(4000,() => {
     console.log("后台服务已启动！");

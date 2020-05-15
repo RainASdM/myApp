@@ -190,3 +190,6 @@ fabric.properties
 .idea/modules.xml
 .idea/myApp.iml
 .idea/vcs.xml
+
+# TypeScript生成文件
+!/node_app/build/
