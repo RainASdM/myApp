@@ -1,0 +1,25 @@
+"use strict";
+var express = require("express");
+var cors = require("cors");
+var app = express();
+app.use(cors());
+//设置允许跨域访问该服务.
+app.use('*', function (req, res, next) {
+    res.header('Access-Control-Allow-Origin', '*');
+    //Access-Control-Allow-Headers ,可根据浏览器的F12查看,把对应的粘贴在这里就行
+    res.header('Access-Control-Allow-Headers', 'Content-Type');
+    res.header('Access-Control-Allow-Methods', '*');
+    res.header('Content-Type', 'application/json;charset=utf-8');
+    next();
+});
+app.get("/", function (req, res) {
+    res.send("index");
+    console.log("index");
+});
+app.get("/asd", function (req, res) {
+    res.send("hallow world!");
+    console.log("asd");
+});
+app.listen(4000, function () {
+    console.log("后台服务已启动！");
+});
