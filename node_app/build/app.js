@@ -14,12 +14,20 @@ app.use('*', function (req, res, next) {
 });
 app.get("/", function (req, res) {
     res.send("index");
-    console.log("index");
+    console.info("index");
 });
 app.get("/asd", function (req, res) {
     res.send("hallow world!");
-    console.log("asd");
+    console.info("asd");
 });
+app.get("/isLogin", function (req, res) {
+    res.send(true);
+});
+app.post("/login", function (req, res) {
+    // if (req)
+    res.send();
+});
+app.get("/signOut");
 app.listen(4000, function () {
     console.log("后台服务已启动！");
 });

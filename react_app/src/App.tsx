@@ -1,8 +1,18 @@
+/**
+ *  @author: RainASdM
+ *  @date: 2020-05-04 21:43
+ *  @description  全局导航栏组件
+ */
+
+//引入依赖库
 import React from 'react';
 
-import Request from './utils/Request/index';
+//引入子组件
+import Nav from './public_Components/Nav';
+import Index from './pages/Index'
 
-import logo from './logo.svg';
+// import logo from './logo.svg';
+
 import './App.css';
 
 function App() {
@@ -10,30 +20,13 @@ function App() {
     return (
         <div className="App">
             <header className="App-header">
-                <img src={logo} className="App-logo" alt="logo"/>
-                <p>
-                    Edit <code>src/App.tsx</code> and save to reload.
-                </p>
-                <a
-                    className="App-link"
-                    href="https://reactjs.org"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Learn React
-                </a>
-                <div onClick={() => {
-                    console.info(Request.GET({
-                        path: "/asd",
-                        callback: () => {
-                        }
-                    }));
-                }}
-                    >asd</div>
-                    </header>
-                    </div>
-                    );
-                }
+                <Nav/>
+            </header>
+            <main>
+                <Index/>
+            </main>
+        </div>
+    );
+}
 
-                     export default App
-                ;
+export default App;

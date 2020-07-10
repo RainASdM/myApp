@@ -5,13 +5,17 @@
  */
 
 //引入依赖库
-import React, {useState} from "react";
+import React from "react";
+import logo from "../../logo.jpg";
 
 const Index = () => {
 
 
     return (
         <>
+            <img src={logo} className="App-logo" alt="logo"/>
         </>
     )
 }
+
+export default Index;

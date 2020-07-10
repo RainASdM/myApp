@@ -15,15 +15,14 @@ app.use('*',(req: any, res: any, next: any) => {
     next();
 });
 
-
 app.get("/",(req: any, res: { send: (arg0: string) => void; }) => {
     res.send("index");
-    console.log("index");
+    console.info("index");
 });
 
 app.get("/asd",(req: any, res: { send: (arg0: string) => void; }) => {
     res.send("hallow world!");
-    console.log("asd");
+    console.info("asd");
 });
 
 app.get("/isLogin",(req: object, res: {send: (result: boolean) => void}) => {
@@ -36,6 +35,8 @@ app.post("/login",(req: any, res: {send: () => void;}) => {
 
     res.send()
 })
+
+app.get("/signOut")
 
 app.listen(4000,() => {
     console.log("后台服务已启动！");
