@@ -17,10 +17,6 @@ interface logIn_Callback_interface {
 
 }
 
-interface singOut_interface {
-    signOut_Callback : () => {};
-}
-
 interface signOut_Callback_interface {
     result: object;
 }
@@ -59,10 +55,10 @@ const logIn_Callback = (result : logIn_Callback_interface) => {
 }
 
 
-const singOut = (signOut_Callback: singOut_interface) => {
+const singOut = () => {
     Request.GET({
         path: "/signOut",
-        callback: (result: object) => {
+        callback: (result: signOut_Callback_interface) => {
             signOut_Callback(result);
         }
     })
@@ -73,8 +69,9 @@ const singOut = (signOut_Callback: singOut_interface) => {
  * @param result
  */
 const signOut_Callback = (result : signOut_Callback_interface) => {
-
+    console.log(result);
 }
+
 
 export {
     getLoginStatus,

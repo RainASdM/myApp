@@ -19,9 +19,6 @@ const Nav = () => {
             status: false,
             value: {}
         });
-    //初始化登录状态
-    const logIngInit = getLoginStatus();
-    setLoginStatus(logIngInit);
 
     return (
         <nav>
@@ -29,7 +26,7 @@ const Nav = () => {
                 loginStatus ?
                     <ul>
                         <li onClick={() => {
-
+                            console.log("login");
                         }}>登录
                         </li>
                     </ul>

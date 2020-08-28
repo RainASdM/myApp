@@ -12,6 +12,9 @@ app.use('*',(req: any, res: any, next: any) => {
     res.header('Access-Control-Allow-Headers', 'Content-Type');
     res.header('Access-Control-Allow-Methods', '*');
     res.header('Content-Type', 'application/json;charset=utf-8');
+
+    console.log(`${req.ip}访问：${req.baseURL}`);
+
     next();
 });
 

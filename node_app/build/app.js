@@ -10,6 +10,7 @@ app.use('*', function (req, res, next) {
     res.header('Access-Control-Allow-Headers', 'Content-Type');
     res.header('Access-Control-Allow-Methods', '*');
     res.header('Content-Type', 'application/json;charset=utf-8');
+    console.log(req.ip + "\u8BBF\u95EE\uFF1A" + req.baseURL);
     next();
 });
 app.get("/", function (req, res) {
