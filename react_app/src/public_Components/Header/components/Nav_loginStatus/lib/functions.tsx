@@ -5,19 +5,20 @@
  */
 
 //引入依赖库
-import Request from "../../../utils/Request";
+import Request from "../../../../../utils/Request";
 
 //接口类型
 interface logIn_interface {
     useName: string,
-    password: string
+    password: string,
+    obj: object
 }
 
 interface logIn_Callback_interface {
 
 }
 
-interface signOut_Callback_interface {
+interface logOut_Callback_interface {
     result: object;
 }
 
@@ -34,11 +35,11 @@ const getLoginStatus : () => {} = () => {
 }
 
 /**
- *
+ * 登录请求
  */
-const logIn = ({useName, password} : logIn_interface) => {
+const logIn = ({useName, password, obj} : logIn_interface) => {
     Request.POST({
-        params: {useName, password},
+        params: {useName, password, obj},
         path: "/login",
         callback: (result: object) => {
             logIn_Callback(result)
@@ -55,11 +56,11 @@ const logIn_Callback = (result : logIn_Callback_interface) => {
 }
 
 
-const singOut = () => {
+const logOut = () => {
     Request.GET({
         path: "/signOut",
-        callback: (result: signOut_Callback_interface) => {
-            signOut_Callback(result);
+        callback: (result: logOut_Callback_interface) => {
+            logOut_Callback(result);
         }
     })
 }
@@ -68,7 +69,7 @@ const singOut = () => {
  * 退出登录回调方法
  * @param result
  */
-const signOut_Callback = (result : signOut_Callback_interface) => {
+const logOut_Callback = (result : logOut_Callback_interface) => {
     console.log(result);
 }
 
@@ -77,6 +78,6 @@ export {
     getLoginStatus,
     logIn,
     logIn_Callback,
-    singOut,
-    signOut_Callback
+    logOut,
+    logOut_Callback
 }

@@ -9,9 +9,16 @@ import React, {useState} from "react";
 
 
 //组件依赖方法集
-import {getLoginStatus, singOut, signOut_Callback} from "./lib/functions"
+import {
+    getLoginStatus,
+    logIn,
+    logIn_Callback,
+    logOut,
+    logOut_Callback
+} from "./lib/functions"
 
-const Nav = () => {
+
+const Nav_loginStatus = () => {
 
     //登录状态
     const [loginStatus, setLoginStatus] = useState<object>(
@@ -26,7 +33,11 @@ const Nav = () => {
                 loginStatus ?
                     <ul>
                         <li onClick={() => {
-                            console.log("login");
+                            logIn({
+                                useName: "asd",
+                                password: "5656",
+                                obj: new Array()
+                            });
                         }}>登录
                         </li>
                     </ul>
@@ -37,13 +48,14 @@ const Nav = () => {
                         <li>个人中心</li>
                         <li
                             onClick={() => {
-                               singOut();
+                                logOut();
                             }}
-                        >退出登录</li>
+                        >退出登录
+                        </li>
                     </ul>
             }
         </nav>
     )
 }
 
-export default Nav;
+export default Nav_loginStatus;

@@ -1,8 +1,22 @@
-const express = require("express");
-const cors = require("cors");
+/**
+ *  @author: RainASdM
+ *  @date: 2020-09-19 02:05
+ *  @description  应用启动主文件
+ */
 
+//依赖包
+import express, {Request, Response} from "express";
+import cors from "cors";
+
+//路由主方法
+import router from "../public/router";
+
+import login_routes from "../routes/login";
+
+//初始化服务
 const app = express();
 
+//启用跨域请求CORS模块
 app.use(cors());
 
 //设置允许跨域访问该服务.
@@ -18,29 +32,21 @@ app.use('*',(req: any, res: any, next: any) => {
     next();
 });
 
-app.get("/",(req: any, res: { send: (arg0: string) => void; }) => {
+//启动路由
+router(app);
+
+login_routes(app);
+
+app.get("/",(req: Request, res: Response) => {
     res.send("index");
     console.info("index");
 });
 
-app.get("/asd",(req: any, res: { send: (arg0: string) => void; }) => {
+app.get("/asd",(req: Request, res: Response) => {
     res.send("hallow world!");
     console.info("asd");
 });
 
-app.get("/isLogin",(req: object, res: {send: (result: boolean) => void}) => {
-    res.send(true)
-})
-
-app.post("/login",(req: any, res: {send: () => void;}) => {
-    // if (req)
-
-
-    res.send()
-})
-
-app.get("/signOut")
-
 app.listen(4000,() => {
-    console.log("后台服务已启动！");
+    console.log("port:4000  --后台服务已启动！");
 });

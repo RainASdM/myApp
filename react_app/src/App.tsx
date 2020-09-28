@@ -8,10 +8,9 @@
 import React from 'react';
 
 //引入子组件
-import Nav from './public_Components/Nav';
+import Header from "./public_Components/Header/Header";
 import Index from './pages/Index'
 
-// import logo from './logo.svg';
 
 import './App.css';
 
@@ -19,9 +18,7 @@ function App() {
 
     return (
         <div className="App">
-            <header className="App-header">
-                <Nav/>
-            </header>
+            <Header/>
             <main>
                 <Index/>
             </main>

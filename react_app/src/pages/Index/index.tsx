@@ -6,7 +6,7 @@
 
 //引入依赖库
 import React from "react";
-import logo from "../../logo.jpg";
+import logo from "../../static/img/logo.jpg";
 
 const Index = () => {
 

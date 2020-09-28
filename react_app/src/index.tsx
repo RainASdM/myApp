@@ -1,12 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import * as serviceWorker from './serviceWorker';
+
+//路由组件
+import Routers from "./Routers"
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Routers />
   </React.StrictMode>,
   document.getElementById('root')
 );
