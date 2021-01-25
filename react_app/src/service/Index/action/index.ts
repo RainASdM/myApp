@@ -4,7 +4,12 @@
  *  @description
  */
 
-const createActionIsIndex = (type,info) => {
+interface createActionIsIndex {
+    type: string,
+    info: any
+}
+
+const createActionIsIndex = ({type, info}: createActionIsIndex) => {
     return {
         type,
         IS_INDEX: info

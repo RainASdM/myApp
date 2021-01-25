@@ -1,7 +1,7 @@
 /**
  *  @author: RainASdM
  *  @date: 2020-09-29 01:04
- *  @description
+ *  @description  全局头部组件
  */
 
 //基本库
@@ -15,6 +15,7 @@ import "./style.less"
 
 //子组件
 import Nav_loginStatus from "./components/Nav_loginStatus";
+import logo from "../../assets/img/logo.jpg";
 
 //接口
 interface props {
@@ -29,7 +30,10 @@ class Header extends Component {
     render() {
         return (
             <header>
+                {/*logo*/}
+                <img src={logo} className="App-logo" alt="logo"/>
                 <span className={config.Icon.className}/>
+                {/*导航栏登录/个人中心*/}
                 <Nav_loginStatus/>
             </header>
         )

@@ -47,6 +47,21 @@ app.get("/asd",(req: Request, res: Response) => {
     console.info("asd");
 });
 
+//获取登录状态
+app.get("/app/isLogin",() => {
+
+})
+
+//登录
+app.post("/app/login",() => {
+
+});
+
+//退出登录
+app.get("/app/logOut", () => {
+
+})
+
 app.listen(4000,() => {
     console.log("port:4000  --后台服务已启动！");
 });

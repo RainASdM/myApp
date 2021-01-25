@@ -1,7 +1,7 @@
 /**
  *  @author: RainASdM
  *  @date: 2020-05-04 21:43
- *  @description  全局导航栏组件
+ *  @description  导航栏登录/个人中心
  */
 
 //引入依赖库
@@ -14,7 +14,7 @@ import {
     logIn,
     logIn_Callback,
     logOut,
-    logOut_Callback
+    // logOut_Callback
 } from "./lib/functions"
 
 
@@ -27,6 +27,9 @@ const Nav_loginStatus = () => {
             value: {}
         });
 
+
+
+
     return (
         <nav>
             {
@@ -35,9 +38,8 @@ const Nav_loginStatus = () => {
                         <li onClick={() => {
                             logIn({
                                 useName: "asd",
-                                password: "5656",
-                                obj: new Array()
-                            });
+                                password: "5656"
+                            }, setLoginStatus);
                         }}>登录
                         </li>
                     </ul>

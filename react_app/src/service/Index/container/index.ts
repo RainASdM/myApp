@@ -6,12 +6,14 @@
 
 import {connect} from "react-redux";
 
-import {IS_INDEX} from "../constant"
+import {IS_INDEX, SHOW} from "../constant"
 
 import {createActionIsIndex} from "../action/index"
 
 
-const mapStateToProps = {};
+const mapStateToProps = (state : object) => {
+    name: state.index_Reducer.name
+};
 
 const mapDispatchToProps = {}
 

@@ -39,6 +39,15 @@ app.get("/asd", function (req, res) {
     res.send("hallow world!");
     console.info("asd");
 });
+//获取登录状态
+app.get("/app/isLogin", function () {
+});
+//登录
+app.post("/app/login", function () {
+});
+//退出登录
+app.get("/app/logOut", function () {
+});
 app.listen(4000, function () {
     console.log("port:4000  --后台服务已启动！");
 });

@@ -5,7 +5,9 @@
  */
 
 const IS_INDEX = "IS_INDEX";
+const SHOW = "SHOW"
 
-export default {
-    IS_INDEX
+export {
+    IS_INDEX,
+    SHOW
 }

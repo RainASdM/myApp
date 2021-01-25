@@ -7,6 +7,6 @@
 export default {
     Icon: {
         className: "pageIcon",
-        src: "../../../static/img/logo.jpg"
+        src: "../../../assets/img/logo.jpg"
     }
 }

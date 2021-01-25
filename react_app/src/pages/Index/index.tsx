@@ -5,15 +5,38 @@
  */
 
 //引入依赖库
-import React from "react";
-import logo from "../../static/img/logo.jpg";
+import React, {useState} from "react";
+
+//配置文件
+import {Index_Column} from "./config"
+
+//子组件
+import Index_Carousel from "./components/Index_Carousel"
+import Column from "./components/Column";
+
+//接口
+interface thisColumn {
+    name: string,
+    value: string
+}
 
 const Index = () => {
+
+    const [] = useState({})
 
 
     return (
         <>
-            <img src={logo} className="App-logo" alt="logo"/>
+            <Index_Carousel/>
+            {
+                Index_Column.map((thisColumn:thisColumn) => {
+                    return (
+                        <>
+                            <Column thisColumn={thisColumn}/>
+                        </>
+                    )
+                })
+            }
         </>
     )
 }

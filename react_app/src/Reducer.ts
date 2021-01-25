@@ -9,19 +9,19 @@ import {combineReducers} from "redux"
 const index_Reducer = (state = {name: "index"}, action: {type: string} ) => {
     switch (action.type) {
         case "asd": {
-            return "asd"
+            return {...state, asd:"asd"}
         }
         case "dsa": {
-            return "dsa"
+            return {...state, asd:"dsa"}
         }
         default: {
-            return "aaa"
+            return {...state, asd:"aaa"}
         }
     }
 }
 
 const login_Reducer = (state = {name: "index"}, action: {type: string} ) => {
-    return action.type;
+    return {...state, isLogin: action};
 }
 
 

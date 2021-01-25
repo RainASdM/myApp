@@ -5,24 +5,31 @@
  */
 
 //基本库
-import React,{Component} from "react";
-import {BrowserRouter,Switch,Route} from "react-router-dom"
+import React, {Component} from "react";
+import {BrowserRouter as Router, Switch, Route} from "react-router-dom"
+import "antd/dist/antd.css"
 
 //子组件
 import App from "./App";
 import Login_page from "./pages/Login_page";
+import Header from "./components/Header/Header";
 
-class Routers extends Component{
+class Routers extends Component {
 
     render() {
 
         return (
-            <BrowserRouter>
+            <Router>
+                {/*头部*/}
+                <Header/>
+                {/*main*/}
                 <Switch>
+                    {/*首页*/}
                     <Route path={"/"} component={App} exact/>
+                    {/*登录页*/}
                     <Route path={"/login"} component={Login_page} exact/>
                 </Switch>
-            </BrowserRouter>
+            </Router>
         )
 
     }

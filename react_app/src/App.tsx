@@ -8,7 +8,6 @@
 import React from 'react';
 
 //引入子组件
-import Header from "./public_Components/Header/Header";
 import Index from './pages/Index'
 
 
@@ -16,10 +15,13 @@ import './App.css';
 
 function App() {
 
+    const data = {
+        id: "index"
+    }
+
     return (
         <div className="App">
-            <Header/>
-            <main>
+            <main id={data.id}>
                 <Index/>
             </main>
         </div>

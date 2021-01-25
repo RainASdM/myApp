@@ -8,16 +8,18 @@
 import Request from "../../../../../utils/Request";
 
 //接口类型
+//登录
 interface logIn_interface {
     useName: string,
-    password: string,
-    obj: object
+    password: string
 }
 
+//登录回调
 interface logIn_Callback_interface {
 
 }
 
+// 退出登录回调
 interface logOut_Callback_interface {
     result: object;
 }
@@ -34,15 +36,19 @@ const getLoginStatus : () => {} = () => {
     };
 }
 
+const setLoginStatus : (result: object) => {} = () => {
+
+}
+
 /**
  * 登录请求
  */
-const logIn = ({useName, password, obj} : logIn_interface) => {
+const logIn = ({useName, password} : logIn_interface, setLoginStatus : (result: object) => {}) => {
     Request.POST({
-        params: {useName, password, obj},
+        params: {useName, password},
         path: "/login",
         callback: (result: object) => {
-            logIn_Callback(result)
+            setLoginStatus(result);
         }
     });
 }
@@ -76,6 +82,7 @@ const logOut_Callback = (result : logOut_Callback_interface) => {
 
 export {
     getLoginStatus,
+    setLoginStatus,
     logIn,
     logIn_Callback,
     logOut,
