@@ -11,6 +11,7 @@ import React, {useState} from "react";
 //组件依赖方法集
 import {
     getLoginStatus,
+    setLoginStatus，
     logIn,
     logIn_Callback,
     logOut,
