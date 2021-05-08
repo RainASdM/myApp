@@ -14,7 +14,7 @@ import {
     setLoginStatus，
     logIn,
     logIn_Callback,
-    logOut,
+    logOut
     // logOut_Callback
 } from "./lib/functions"
 
