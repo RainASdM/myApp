@@ -14,7 +14,7 @@ import config from "./lib/config";
 import "./style.less"
 
 //子组件
-import Nav_loginStatus from "./components/Nav_loginStatus";
+// import Nav_loginStatus from "./components/Nav_loginStatus";
 import logo from "../../assets/img/logo.jpg";
 
 //接口
@@ -34,7 +34,7 @@ class Header extends Component {
                 <img src={logo} className="App-logo" alt="logo"/>
                 <span className={config.Icon.className}/>
                 {/*导航栏登录/个人中心*/}
-                <Nav_loginStatus/>
+                {/*<Nav_loginStatus/>*/}
             </header>
         )
     }
