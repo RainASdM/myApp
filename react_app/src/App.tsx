@@ -13,7 +13,7 @@ import Index from './pages/Index'
 
 import './App.css';
 
-function App() {
+function App(){
 
     const data = {
         id: "index"

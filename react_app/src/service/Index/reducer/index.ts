@@ -16,7 +16,7 @@ interface indexReducer {
 const indexReducer = ({indexState, action}: indexReducer) => {
     switch (action.type) {
         case IS_INDEX: {
-            break;
+            return {...indexState}
         }
         case SHOW: {
             break;

@@ -5,14 +5,14 @@
  */
 
 //引入依赖库
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 
 
 //组件依赖方法集
 import {
+    getLoginStatus,
     logIn,
     logOut
-    // logOut_Callback
 } from "./lib/functions"
 
 
@@ -25,11 +25,15 @@ const Nav_loginStatus = () => {
             value: {}
         });
 
+    useEffect(() => {
+        setLoginStatus(getLoginStatus)
+    },[]);
+
 
 
 
     return (
-        <nav>
+        <div>
             {
                 loginStatus ?
                     <ul>
@@ -54,7 +58,7 @@ const Nav_loginStatus = () => {
                         </li>
                     </ul>
             }
-        </nav>
+        </div>
     )
 }
 

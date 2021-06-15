@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './assets/style/index.less';
 import * as serviceWorker from './serviceWorker';
 
 //路由组件
-import Routers from "./Routers"
+import Router from "./Router"
 
 //Redux组件
 import {Provider} from "react-redux";
@@ -13,7 +13,7 @@ import store from "./store";
 ReactDOM.render(
     <React.StrictMode>
         <Provider store={store}>
-            <Routers/>
+            <Router/>
         </Provider>
     </React.StrictMode>,
     document.getElementById('root')

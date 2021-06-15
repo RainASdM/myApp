@@ -6,14 +6,15 @@
 
 import {connect} from "react-redux";
 
-import {IS_INDEX, SHOW} from "../constant"
+/*interface LOGIN_STATE_interface {
+    isLogin: false,
+    username: "",
+    userType: ""
+}*/
 
-import {createActionIsIndex} from "../action/index"
-
-
-const mapStateToProps = (state : object) => {
+const mapStateToProps = (state : {index_Reducer: {name: string}}) => ({
     name: state.index_Reducer.name
-};
+});
 
 const mapDispatchToProps = {}
 

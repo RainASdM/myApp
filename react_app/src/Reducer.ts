@@ -9,13 +9,13 @@ import {combineReducers} from "redux"
 const index_Reducer = (state = {name: "index"}, action: {type: string} ) => {
     switch (action.type) {
         case "asd": {
-            return {...state, asd:"asd"}
+            return {...state, username:"asd"}
         }
         case "dsa": {
-            return {...state, asd:"dsa"}
+            return {...state, username:"dsa"}
         }
         default: {
-            return {...state, asd:"aaa"}
+            return {...state, username:"aaa"}
         }
     }
 }

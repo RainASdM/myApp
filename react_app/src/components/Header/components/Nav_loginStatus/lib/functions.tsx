@@ -5,8 +5,8 @@
  */
 
 //引入依赖库
-import Request from "../../../../../utils/Request"
-import {} from "react";
+import {Dispatch, SetStateAction} from "react"
+import Request from "../../../../../utils/Request";
 
 //接口类型
 //登录
@@ -14,11 +14,6 @@ interface logIn_interface {
     useName: string,
     password: string
 }
-
-//登录回调
-// interface logIn_Callback_interface {
-//
-// }
 
 // 退出登录回调
 interface logOut_Callback_interface {
@@ -40,7 +35,7 @@ const getLoginStatus : () => {} = () => {
 /**
  * 登录请求
  */
-const logIn = ({useName, password} : logIn_interface, setLoginStatus : ) => {
+const logIn = ({useName, password} : logIn_interface, setLoginStatus : Dispatch<SetStateAction<object>>) => {
     Request.POST({
         params: {useName, password},
         path: "/login",
@@ -50,13 +45,6 @@ const logIn = ({useName, password} : logIn_interface, setLoginStatus : ) => {
     });
 }
 
-/**
- * 登录回调方法
- * @param result
- */
-// const logIn_Callback = (result : logIn_Callback_interface) => {
-//
-// }
 
 
 const logOut = () => {
@@ -80,6 +68,5 @@ const logOut_Callback = (result : logOut_Callback_interface) => {
 export {
     getLoginStatus,
     logIn,
-    logOut,
-    logOut_Callback
+    logOut
 }

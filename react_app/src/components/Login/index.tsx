@@ -5,7 +5,6 @@
  */
 
 //引入依赖库
-import React, {useState} from "react";
 
 //公共组件
 import Request from "../../utils/Request";
@@ -13,9 +12,6 @@ import Request from "../../utils/Request";
 //函数接口数据类型
 interface login_params {
     params: object
-}
-interface isLogin {
-
 }
 
 class Login {

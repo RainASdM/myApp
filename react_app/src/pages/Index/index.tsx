@@ -29,10 +29,10 @@ const Index = () => {
         <>
             <Index_Carousel/>
             {
-                Index_Column.map((thisColumn:thisColumn) => {
+                Index_Column.map((thisColumn: thisColumn) => {
                     return (
                         <>
-                            <Column thisColumn={thisColumn}/>
+                            <Column key={thisColumn.name} thisColumn={thisColumn}/>
                         </>
                     )
                 })

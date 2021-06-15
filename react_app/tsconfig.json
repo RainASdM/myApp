@@ -2,6 +2,11 @@
   "compilerOptions": {
     "target": "ES2015",
     "module": "esnext",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "checkJs": true,
     "jsx": "react",
@@ -9,7 +14,9 @@
     "outDir": "./dist",
     "rootDir": "./src",
     "removeComments": true,
+    "noEmit": true,
     "downlevelIteration": true,
+    "isolatedModules": true,
     "strict": true,
     "noImplicitAny": true,
     "strictNullChecks": true,
@@ -24,20 +31,13 @@
     "typeRoots": [
       "node_modules/@types"
     ],
+    "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "preserveSymlinks": true,
     "allowUmdGlobalAccess": true,
     "forceConsistentCasingInFileNames": true,
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
     "skipLibCheck": true,
-    "allowSyntheticDefaultImports": true,
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true
+    "resolveJsonModule": true
   },
   "exclude": [
     "node_modules",
@@ -46,5 +46,7 @@
   ],
   "include": [
     "src"
-  ]
+  ],
+  "resolveJsonModule": true,
+  "skipLibCheck": true
 }
