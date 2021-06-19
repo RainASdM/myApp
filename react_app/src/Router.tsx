@@ -14,13 +14,24 @@ import ErrorCatch from "./components/ErrorCatch"
 import App from "./App";
 import Header from "./components/Header";
 
+//登录页
 const Login_page = React.lazy(() => import("./pages/Login_page"));
+//注册页
+const Registered_page = React.lazy(() => import("./pages/Registered_page"))
+
+const Login = ({match}: { match: { url: string } }) => (
+    <>
+        {/*登录页*/}
+        <Route path={`${match.url}`} component={Login_page} exact/>
+        {/*注册页*/}
+        <Route path={`${match.url}/registered`} component={Registered_page} exact/>
+    </>
+)
 
 
 class MyRouter extends Component {
 
     render() {
-
 
         return (
             <Router>
@@ -38,7 +49,7 @@ class MyRouter extends Component {
                             <Route path={"/"} component={App} exact/>
 
                             {/*登录页*/}
-                            <Route path={"/login"} component={Login_page} exact/>
+                            <Route path={"/login"} component={Login}/>
 
                         </Switch>
                     </Suspense>

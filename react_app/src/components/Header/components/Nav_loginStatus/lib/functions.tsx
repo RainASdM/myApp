@@ -9,23 +9,12 @@ import {Dispatch, SetStateAction} from "react"
 import Request from "../../../../../utils/Request";
 
 //接口类型
-//登录
-interface logIn_interface {
-    useName: string,
-    password: string
-}
-
-// 退出登录回调
-interface logOut_Callback_interface {
-    result: object;
-}
+import {logIn_interface, logOut_Callback_interface} from "./types"
 
 /**
  * 获取登录当前状态
  */
-const getLoginStatus : () => {} = () => {
-
-
+const getLoginStatus: () => {} = () => {
     return {
         status: false,
         value: {}
@@ -35,7 +24,7 @@ const getLoginStatus : () => {} = () => {
 /**
  * 登录请求
  */
-const logIn = ({useName, password} : logIn_interface, setLoginStatus : Dispatch<SetStateAction<object>>) => {
+const logIn = ({useName, password}: logIn_interface, setLoginStatus: Dispatch<SetStateAction<object>>) => {
     Request.POST({
         params: {useName, password},
         path: "/login",
@@ -44,7 +33,6 @@ const logIn = ({useName, password} : logIn_interface, setLoginStatus : Dispatch<
         }
     });
 }
-
 
 
 const logOut = () => {
@@ -60,7 +48,7 @@ const logOut = () => {
  * 退出登录回调方法
  * @param result
  */
-const logOut_Callback = (result : logOut_Callback_interface) => {
+const logOut_Callback = (result: logOut_Callback_interface) => {
     console.log(result);
 }
 

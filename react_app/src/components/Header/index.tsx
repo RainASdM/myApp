@@ -18,7 +18,6 @@ import "./style.less"
 
 //子组件
 import Nav_loginStatus from "./components/Nav_loginStatus";
-import logo from "../../assets/img/logo.jpg";
 import {Context} from "../Context/components/Main_context"
 import BreadCrumbs from "../BreadCrumbs";
 
@@ -32,24 +31,16 @@ class Header extends Component <props, state> {
         }
     }
 
-    showComponentName = () => {
-        const {componentName} = this.state;
-        console.dir(componentName);
-        this.setState(({showLogo}) => ({
-            showLogo: !showLogo
-        }))
-    }
-
 
     render() {
         const {showLogo} = this.state;
 
         return (
-            <header id="header" onClick={this.showComponentName}>
+            <header id="header">
                 {/*导航栏*/}
                 <nav id="nav">
                     {/*logo*/}
-                    {showLogo && <img src={logo} className="App-logo" alt="logo"/>}
+                    {showLogo && <span className="App-logo"/>}
                     <span className={config.Icon.className}/>
 
                     {/*导航栏登录/个人中心*/}
@@ -59,7 +50,7 @@ class Header extends Component <props, state> {
                     <Context.Consumer>
                         {
                             ({context, changeContexts}) =>
-                                <span onClick={() => changeContexts([{key: "theme", value: "dark"}])}>
+                                <span className="theme" onClick={() => changeContexts([{key: "theme", value: "dark"}])}>
                                 {context.theme}
                             </span>
                         }

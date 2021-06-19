@@ -6,12 +6,15 @@
 
 //引入依赖库
 import React, {useEffect, useState} from "react";
+import {Link} from "react-router-dom";
+
+//样式
+import "./style.less"
 
 
 //组件依赖方法集
 import {
     getLoginStatus,
-    logIn,
     logOut
 } from "./lib/functions"
 
@@ -27,38 +30,34 @@ const Nav_loginStatus = () => {
 
     useEffect(() => {
         setLoginStatus(getLoginStatus)
-    },[]);
-
-
+    }, []);
 
 
     return (
-        <div>
+        <ul className="nav-login">
             {
                 loginStatus ?
-                    <ul>
-                        <li onClick={() => {
-                            logIn({
-                                useName: "asd",
-                                password: "5656"
-                            }, setLoginStatus);
-                        }}>登录
-                        </li>
-                    </ul>
+
+                    <li>
+                        <Link to="/login">登录</Link>
+                    </li>
 
                     :
 
-                    <ul>
-                        <li>个人中心</li>
-                        <li
-                            onClick={() => {
+                    <>
+                        <li>
+                            <Link to="/">个人中心</Link>
+                        </li>
+
+                        <li onClick={() => {
                                 logOut();
                             }}
-                        >退出登录
+                        >
+                            退出登录
                         </li>
-                    </ul>
+                    </>
             }
-        </div>
+        </ul>
     )
 }
 

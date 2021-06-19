@@ -6,16 +6,20 @@
 
 //依赖库
 import React from "react";
-import {Link} from "react-router-dom";
+
+//子组件
+import LogInForm from "./components/LogInForm"
+
 
 const Login_page = () => {
 
+    const ref = React.createRef();
+
     return (
         <main>
-            <button>回首页</button>
-            <li>
-                <Link to='/'>返回首页</Link>
-            </li>
+            <div className="login"/>
+
+            <LogInForm refs={ref}/>
         </main>
     )
 
